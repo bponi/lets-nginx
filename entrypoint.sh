@@ -119,7 +119,7 @@ fi
     --standalone \
     "${SERVER}" \
     --email "${EMAIL}" --agree-tos \
-    --expand " > /etc/nginx/lets
+    --expand --text" > /etc/nginx/lets
     /bin/bash /etc/nginx/lets
   fi
 
@@ -142,7 +142,7 @@ letsencrypt certonly --force-renewal \
 ${letscmd} \
 ${SERVER} \
 --email "${EMAIL}" --agree-tos \
---expand
+--expand --text
 
 # Reload nginx configuration to pick up the reissued certificates
 /usr/sbin/nginx -s reload
